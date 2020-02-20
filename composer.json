@@ -1,0 +1,16 @@
+{
+  "name": "ekaurgre/328/TruckLoad",
+  "authors": [
+    {
+      "name": "Ekampreet Kaur",
+      "email": "ekaur@mail.greenriver.edu"
+    },
+    {
+      "name": "Maureen Kariuki",
+      "email": "mkariuki@mail.greenriver.edu"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  }
+}
