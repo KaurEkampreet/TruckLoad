@@ -17,11 +17,20 @@ require ("vendor/autoload.php");
 $f3 = Base:: instance();
 
 //default route
-
 $f3->route('GET /', function ()
 {
     $view = new Template();
     echo $view->render('views/home.html');
+
+    //echo "Pet Home";
+});
+
+//Define partner's route
+$f3->route('GET /partners', function ()
+{
+    //echo "Hello!";
+    $view = new Template();
+    echo $view->render('views/partners.html');
 
     //echo "Pet Home";
 });

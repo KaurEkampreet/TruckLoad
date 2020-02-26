@@ -1,7 +1,13 @@
-.jumbotron {
+#btn {
+    text-align: center;
+    align-items: center;
+}
+
+.jumbotron-fluid {
     background-color: #3f9fb5;
     color: white;
     background-image: url("../images/trucking.jpg");
     height: 410px;
 
 }
+
