@@ -1,8 +1,29 @@
-.jumbotron-fluid {
-    background-color: #3f9fb5;
-    color: white;
-    background-image: url("../images/trucking.jpg");
-    height: 410px;
+.btn {
+    margin-top: 380px;
+}
 
+#btn2 {
+    margin-top: 230px;
+}
+
+.container-fluid {
+    background-color: #0c5460;
+    color: white;
+    background-margin: 100px;
+    text-align: center;
+}
+
+#heading {
+    background-image: url("../images/trucking.jpg");
+}
+
+
+.col-md-8 {
+    background-color: #3f9fb5;
+    background-image: url("../images/trucking1.jpg");
+    background-repeat: no-repeat;
+    color: white;
+    height: 600px;
+    width: 1000px;
 }
 

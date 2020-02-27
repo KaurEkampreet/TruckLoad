@@ -12,6 +12,9 @@ error_reporting(E_ALL);
 
 require ("vendor/autoload.php");
 
+//Start session
+session_start();
+
 //instantiate Fat-free
 
 $f3 = Base:: instance();
@@ -32,10 +35,10 @@ $f3->route('GET /partners', function ()
     $view = new Template();
     echo $view->render('views/partners.html');
 
-    //echo "Pet Home";
+    session_destroy();
+    $_SESSION = array();
 });
 
 //run fat free
-
 $f3-> run();
 

@@ -17,27 +17,38 @@
           href="./styles/truckload.css">
 </head>
 <body>
-<div class="container">
-    <div class="jumbotron-fluid">
-        <div class="container mt-4 mb-5">
-            <h1 class="text-center">Drive your business forward </h1>
+    <div class="container-fluid mt-4 mb-5">
+        <div class="page-header">
+            <h1 class="text-center">Drive your business forward</h1>
+            <!--<h1 class=" text-capitalize">Freights Trucking</h1>-->
         </div>
 
     </div>
     <hr>
     <br>
-
+    <div class="container">
         <form action="partners.html" method="post">
-            <div class="form-group">
-                <label for="company">Company Name:</label><br><br>
-                <input type="text" class="form-control" id="company" name="company">
-            </div>
-            <br>
-            <div class="form-group">
-                <label for="comment">Give a description of request:</label><br><br>
-                <textarea class="form-control" rows="5" id="comment"></textarea>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label for="company">Company Name:</label>
+                        <input type="text" class="form-control" id="company" name="company">
+                    </div>
+                    <div class="form-group">
+                        <label for="phoneNumber">Phone Number:</label>
+                        <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber">
+                    </div>
+                    <div class="form-group">
+                        <label for="comment">Give a description of request:</label>
+                        <textarea class="form-control" rows="5" id="comment"></textarea>
+                    </div><br>
+                    <div class="text-center ">
+                        <a class="btn btn-lg btn-info" id="btn2" name="button" type="submit" href="#">Submit</a>
+                    </div>
+                </div>
             </div>
         </form>
+
     </div>
 </div>
 <br>
