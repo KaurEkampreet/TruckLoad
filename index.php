@@ -1,7 +1,7 @@
 <?php
 /**
  * Pair programming
- * Team: Ekam,Laxmi, Maureen
+ * Team: Ekam, Maureen
  * Description: Default route
  */
 //error reporting turned on
@@ -10,7 +10,9 @@ error_reporting(E_ALL);
 
 //require vendor/autoload.php
 
-require ("vendor/autoload.php");
+require_once ("vendor/autoload.php");
+require_once ('model/validate.php');
+
 
 //Start session
 session_start();
