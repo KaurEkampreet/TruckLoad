@@ -12,8 +12,6 @@ error_reporting(E_ALL);
 
 require_once ("vendor/autoload.php");
 require_once ('model/validate.php');
-
-
 //Start session
 session_start();
 
@@ -27,20 +25,23 @@ $f3->route('GET /', function ()
     $view = new Template();
     echo $view->render('views/home.html');
 
-    //echo "Pet Home";
 });
 
 //Define partner's route
 $f3->route('GET /partners', function ()
 {
-    //echo "Hello!";
     $view = new Template();
     echo $view->render('views/partners.html');
-
-    session_destroy();
-    $_SESSION = array();
 });
 
+// route for summary page
+$f3->route('POST /summary', function () {
+    $_SESSION['company'] = $_POST['company'];
+    $_SESSION['phonenumber'] = $_POST['phonenumber'];
+    $_SESSION['description'] = $_POST['description'];
+    $view = new Template();
+    echo $view->render('views/summary.html');
+});
 //run fat free
 $f3-> run();
 
