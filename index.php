@@ -62,11 +62,9 @@ $f3->route('GET|POST /partners', function ($f3)
 });
 
 // route for summary page
-$f3->route('GET /summary', function () {
+$f3->route('GET /summary', function ()
+{
 
-    /*$_SESSION['company'] = $_POST['company'];
-    $_SESSION['phonenumber'] = $_POST['phoneNumber'];
-    $_SESSION['description'] = $_POST['description'];*/
     $view = new Template();
     echo $view->render('views/summary.html');
 });

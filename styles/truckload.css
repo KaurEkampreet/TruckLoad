@@ -13,11 +13,6 @@
     text-align: center;
 }
 
-#heading {
-    background-image: url("../images/trucking.jpg");
-}
-
-
 .col-md-8 {
     background-color: #3f9fb5;
     background-image: url("../images/trucking1.jpg");
@@ -27,5 +22,9 @@
     width: 1000px;
 }
 .err {
-    color: darkred;
+    color: red;
+}
+
+#heading {
+    background-image: url("../images/trucking.jpg");
 }
