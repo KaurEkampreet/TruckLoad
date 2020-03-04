@@ -1,13 +1,18 @@
 <?php
 
+/**
+ * @return bool
+ */
 function validForm()
 {
     global $f3;
-    $isValid = true;//flag
+    $isValid = true; //flag
 
     if (!validCompanyName($f3->get('company'))) {
         $isValid = false;
-        $f3->set("errors['company']", "Please enter company name ");
+        $f3->set("errors['company']", "Please enter a company name");
+
+        /*alert("Anything!");*/
     }
 
     if (!validPhoneNumber($f3->get('phoneNumber'))) {
@@ -21,11 +26,19 @@ function validForm()
     return $isValid;
 }
 ////validate company name
+/**
+ * @param $company
+ * @return bool
+ */
 function validCompanyName($company)
 {
-    return !empty($company) && ctype_alpha($company);
+    return !empty($company) /*&& ctype_alpha($company)*/;
 }
 //validate phone number
+/**
+ * @param $phoneNumber
+ * @return bool
+ */
 function validPhoneNumber($phoneNumber)
 {
     $phoneResult = false;
@@ -33,8 +46,14 @@ function validPhoneNumber($phoneNumber)
         $phoneResult = true;
     }
     return $phoneResult;
+
 }
+
+/**
+ * @param $description
+ * @return bool
+ */
 function validDescription($description)
 {
-    return !empty($description) && ctype_alpha($description);
+    return !empty($description) /*&& ctype_alpha($description)*/;
 }
