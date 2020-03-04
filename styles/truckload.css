@@ -7,7 +7,7 @@
 }
 
 .container-fluid {
-    background-color: #0c5460;
+    background-image: url("../images/trucking.jpg");
     color: white;
     background-margin: 100px;
     text-align: center;
@@ -21,6 +21,11 @@
     height: 600px;
     width: 1000px;
 }
+
+.display-3 {
+    color: white;
+}
+
 .err {
     color: red;
 }
