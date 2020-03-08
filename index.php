@@ -17,6 +17,7 @@ session_start();
 
 //instantiate Fat-free
 $f3 = Base:: instance();
+$controller = new truckcontroller($f3);
 
 //set debug level
 $f3->set('DEBUG', 3);
@@ -25,53 +26,23 @@ $f3->set('drivertype', array('Solo', 'Team'));
 $f3->set('trucktype', array('Semi-Truck', '53', 'Flat-bed', 'Tank-Truck'));
 
 
-
 //default route
-$f3->route('GET /', function ()
-{
-    $view = new Template();
-    echo $view->render('views/home.html');
-
+$f3->route('GET /', function () {
+    $GLOBALS['controller']->home();
 });
 
 //Define partner's route
-$f3->route('GET|POST /partners', function ($f3)
-{
-    //If form has been submitted, validate
-    if($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $company = $_POST['company'];
-        $companyPhone = $_POST['phoneNumber'];
-        $description = $_POST['description'];
-
-        //Add data to hive
-        $f3->set('company', $company);
-        $f3->set('phoneNumber', $companyPhone);
-        $f3->set('description', $description);
-
-        //If data is valid
-        if (validForm()) {
-
-            //Write data to Session
-            $_SESSION['company'] = $_POST['company'];
-            $_SESSION['phoneNumber'] = $_POST['phoneNumber'];
-            $_SESSION['description'] = $_POST['description'];
-
-            //redirect to summary page
-            $f3->reroute('/summary');
-        }
-
-    }
-    $view = new Template();
-    echo $view->render('views/partners.html');
+$f3->route('GET|POST /partners', function ($f3) {
+        $GLOBALS['controller']->partners();
 });
 
 // route for summary page
-$f3->route('GET /summary', function ()
-{
-
-    $view = new Template();
-    echo $view->render('views/summary.html');
+$f3->route('GET|POST /summary', function ($f3) {
+    $GLOBALS['controller']->summary();
+    session_destroy();
+    $_SESSION = array();
 });
+
 //run fat free
 $f3-> run();
 
