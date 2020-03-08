@@ -20,6 +20,10 @@ $f3 = Base:: instance();
 
 //set debug level
 $f3->set('DEBUG', 3);
+$f3->set('drivertype', array('Solo', 'Team'));
+
+$f3->set('trucktype', array('Semi-Truck', '53', 'Flat-bed', 'Tank-Truck'));
+
 
 
 //default route
