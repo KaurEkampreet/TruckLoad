@@ -28,9 +28,8 @@
     <div class="container">
         <form action="#" method="post">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-5">
                     <div class="form-group">
-                        <br>
                         <label for="company">Company Name:</label>
                         <input type="text" class="form-control" id="company" name="company" value="{{@company}}">
                         <check if="{{ @errors['company'] }}">
@@ -44,57 +43,55 @@
                             <span class="err">{{ @errors['phoneNumber'] }}</span>
                         </check>
                     </div>
-
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <label class="font-weight-bold mt-2"> Driver Type</label>
-                            <div class="form-check">
-                                <repeat group="{{ @drivertype }}" value="{{ @truckOption }}">
-                                    <label><input type="radio" class="form-check-input"
-                                                  name="driverType"
-                                                  value="{{ @truckOption }}"
-                                        <check if = "{{@driverType== @truckOption}}"> checked="checked"</check>
-                                        >{{ ucfirst(@truckOption) }}
-                                    </label><br>
-                                </repeat>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <label class="font-weight-bold mt-2">Truck Type</label><br>
-                            <select name="truck">
-                                <repeat group="{{@trucktype}}" value="{{@selecttype}}">
-                                    <option value="{{@selecttype}}"
-                                    <check if = "{{@truck==@selecttype}}">
-                                        selected="selected"
-                                    </check>>{{ucfirst(@selecttype)}}
-                                    </option>
-                                </repeat>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group" id="request">
                         <label for="comment">Give a description of request:</label>
                         <textarea class="form-control" rows="5" id="comment" name="description"  value="{{@description}}"></textarea>
                         <check if="{{ @errors['description'] }}">
                             <span class="err">{{ @errors['description'] }}</span>
                         </check>
                     </div>
-
-                    <div class="text-center ">
-                        <button class="btn btn-lg btn-info" id="btn2" name="button" type="submit">Submit</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2">
+                    <label class="font-weight-bold mt-2"> Driver Type</label>
+                    <div class="form-check">
+                        <repeat group="{{ @drivertype }}" value="{{ @truckOption }}">
+                            <label><input type="radio" class="form-check-input"
+                                          name="driverType"
+                                          value="{{ @truckOption }}"
+                                <check if = "{{@driverType== @truckOption}}"> checked="checked"</check>
+                                >{{ ucfirst(@truckOption) }}
+                            </label><br>
+                        </repeat>
                     </div>
                 </div>
+                <div class="col-lg-2">
+                    <label class="font-weight-bold mt-2">Truck Type</label><br>
+                    <select name="truck">
+                        <repeat group="{{@trucktype}}" value="{{@selecttype}}">
+                            <option value="{{@selecttype}}"
+                            <check if = "{{@truck==@selecttype}}">
+                                selected="selected"
+                            </check>>{{ucfirst(@selecttype)}}
+                            </option>
+                        </repeat>
+                    </select>
+                </div>
+            </div>
+            <br>
+
+            <div class="text-center ">
+                <button class="btn btn-lg btn-info" id="btn2" name="button" type="submit">Submit</button>
             </div>
         </form>
     </div>
 
 <br>
 <hr class="m-5">
-<div class="container">
+<div class="container-fluid" id="footer">
     <p id="indexP">Connect with Us</p>
     <p>877-633-2345</p>
     <p>2543 W. Diversey Ave.</p>

@@ -26,27 +26,45 @@
                 <table class="table table-bordered mt-3">
                     <tbody>
                         <tr>
-                            <td>Company Name:{{@SESSION.company}}</td>
+                            <td>Company Name: {{ @SESSION.company }}</td>
                         </tr>
                         <tr>
-                            <td> Phone number: {{@SESSION.phoneNumber}}</td>
+                            <td> Phone number: {{ @SESSION.phoneNumber }}</td>
                         </tr>
                         <tr>
-                            <td>Driver Type:{{@SESSION.truckOption}}</td>
+                            <td>Driver Type: {{ @SESSION.truckOption }}</td>
                         </tr>
                         <tr>
-                            <td>Truck Type:{{@SESSION.selecttype}}</td>
+                            <td>Truck Type: {{ @SESSION.selecttype }}</td>
                         </tr>
                         <tr>
-                            <td>Description:{{@SESSION.description}} </td>
+                            <td>Description: {{ @SESSION.description }} </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <div class="button">
-                <button class="btn btn-primary button"  id="submit"  type="submit">Contact Me!</button>
+            <div class="text-center ">
+                <button class="btn btn-lg btn-info" id="btn3" name="button" type="submit">Send As Email</button>
             </div>
         </div>
     </div>
+<br>
+<hr class="m-5">
+<div class="container-fluid" id="footer">
+    <p id="indexP">Connect with Us</p>
+    <p>877-633-2345</p>
+    <p>2543 W. Diversey Ave.</p>
+    <p>3rd Floor Auburn, WA 98001</p>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
 </html>
