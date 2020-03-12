@@ -21,10 +21,6 @@ $controller = new truckcontroller($f3);
 
 //set debug level
 $f3->set('DEBUG', 3);
-$f3->set('drivertype', array('Solo', 'Team'));
-
-$f3->set('trucktype', array('Straight-Truck', 'Semi-Truck', '53', 'Flat-bed', 'Tank-Truck'));
-
 
 //default route
 $f3->route('GET /', function () {

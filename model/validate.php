@@ -24,10 +24,10 @@ function validForm()
         $f3->set("errors['description']", "Please tell us description of request:");
     }
 
-//    if (!validType($f3->get('driverType'))) {
-//        $isValid = false;
-//        $f3->set("errors['driverType']", "Please select valid Driver Type ");
-//    }
+    if (!validType($f3->get('driver'))) {
+        $isValid = false;
+        $f3->set("errors['driver']", "Please select valid Driver Type ");
+    }
     return $isValid;
 }
 ////validate company name
@@ -62,13 +62,13 @@ function validDescription($description)
     return !empty($description) /*&& ctype_alpha($description)*/;
 }
 
-//function validType($driverType)
-//{
-//    $driverTypeCheck = false;
-//    global $f3;
-//
-//    if (empty($driverType) || in_array($driverType, $f3->get('drivertype'))) {
-//        $driverTypeCheck = true;
-//    }
-//    return $driverTypeCheck;
-//}
+function validType($driver)
+{
+    $driverCheck = false;
+    global $f3;
+
+    if (empty($driver) || in_array($driver, $f3->get('drivertype'))) {
+        $driverCheck = true;
+    }
+    return $driverCheck;
+}

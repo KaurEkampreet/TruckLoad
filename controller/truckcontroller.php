@@ -25,12 +25,15 @@ class truckcontroller
             $company = $_POST['company'];
             $companyPhone = $_POST['phoneNumber'];
             $description = $_POST['description'];
+            $driver = $_POST['driver'];
+            $truck = $_POST['truck'];
 
             //Add data to hive
             $this->_f3->set('company', $company);
             $this->_f3->set('phoneNumber', $companyPhone);
             $this->_f3->set('description', $description);
-
+            $this->_f3->set('driver', $driver);
+            $this->_f3->set('truck', $truck);
             //If data is valid
             if (validForm()) {
 
@@ -38,7 +41,8 @@ class truckcontroller
                 $_SESSION['company'] = $_POST['company'];
                 $_SESSION['phoneNumber'] = $_POST['phoneNumber'];
                 $_SESSION['description'] = $_POST['description'];
-
+                $_SESSION['driver'] = $_POST['driver'];
+                $_SESSION['truck'] = $_POST['truck'];
                 //redirect to summary page
                 $this->_f3->reroute('/summary');
             }

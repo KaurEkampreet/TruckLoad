@@ -36,6 +36,7 @@
                             <span class="err">{{ @errors['company'] }}</span>
                         </check>
                     </div>
+
                     <div class="form-group">
                         <label for="phoneNumber">Phone Number:</label>
                         <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" value="{{@phoneNumber}}">
@@ -44,6 +45,7 @@
                         </check>
                     </div>
                 </div>
+
                 <div class="col-md-6">
                     <div class="form-group" id="request">
                         <label for="comment">Give a description of request:</label>
@@ -54,34 +56,31 @@
                     </div>
                 </div>
             </div>
+
             <div class="row">
-                <div class="col-lg-2">
-                    <label class="font-weight-bold mt-2"> Driver Type</label>
+                <div class="col-lg-12">
+                    <label class="font-weight-bold mt-2">Driver Type</label>
                     <div class="form-check">
-                        <repeat group="{{ @drivertype }}" value="{{ @truckOption }}">
-                            <label><input type="radio" class="form-check-input"
-                                          name="driverType"
-                                          value="{{ @truckOption }}"
-                                <check if = "{{@driverType== @truckOption}}"> checked="checked"</check>
-                                >{{ ucfirst(@truckOption) }}
-                            </label><br>
-                        </repeat>
+                        <input class="form-check-input" type="radio" name="driver" value="Solo" id="solo">
+                        <label class="radio-inline" for="solo">
+                            Solo
+                        </label>
+                        <input class="form-check-label ml-3" type="radio" name="driver" value="Team" id="team">
+                        <label class=" radio-inline" for="team">
+                            Team
+                        </label>
                     </div>
                 </div>
-                <div class="col-lg-2">
-                    <label class="font-weight-bold mt-2">Truck Type</label><br>
-                    <select name="truck">
-                        <repeat group="{{@trucktype}}" value="{{@selecttype}}">
-                            <option value="{{@selecttype}}"
-                            <check if = "{{@truck==@selecttype}}">
-                                selected="selected"
-                            </check>>{{ucfirst(@selecttype)}}
-                            </option>
-                        </repeat>
+
+                <div class="col-12">
+                    <label class="font-weight-bold mt-2" for="truck">Truck Type</label><br>
+                    <select class="select col-12" name="truck" id="truck">
+                        <option value="53'">53'</option>
+                        <option value="Semi- Truck">Semi-Truck</option>
+                        <option value="Flatbed">Flatbed</option>
                     </select>
                 </div>
             </div>
-            <br>
 
             <div class="text-center ">
                 <button class="btn btn-lg btn-info" id="btn2" name="button" type="submit">Submit</button>
@@ -89,7 +88,6 @@
         </form>
     </div>
 
-<br>
 <hr class="m-5">
 <div class="container-fluid" id="footer">
     <p id="indexP">Connect with Us</p>
