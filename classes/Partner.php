@@ -2,6 +2,29 @@
 
 class Partner
 {
+
+    private $_companyName;
+    private $_companyPhone;
+    private $_description;
+    private $_driverType;
+    private $_truckType;
+
+    /**
+     * Partner constructor.
+     * @param $companyName
+     * @param $companyPhone
+     * @param $description
+     * @param $driverType
+     * @param $truckType
+     */
+    public function __construct($companyName, $companyPhone, $description, $driverType, $truckType)
+    {
+        $this->_companyName = $companyName;
+        $this->_companyPhone = $companyPhone;
+        $this->_description = $description;
+        $this->_driverType = $driverType;
+        $this->_truckType = $truckType;
+    }
     /**
      * @return mixed
      */
@@ -81,26 +104,7 @@ class Partner
     {
         $this->_truckType = $truckType;
     }
-    private $_companyName;
-    private $_companyPhone;
-    private $_description;
-    private $_driverType;
-    private $_truckType;
 
-    /**
-     * Partner constructor.
-     * @param $_companyName
-     * @param $_companyPhone
-     * @param $_description
-     * @param $_driverType
-     * @param $_truckType
-     */
-    public function __construct($_companyName, $_companyPhone, $_description, $_driverType, $_truckType)
-    {
-        $this->_companyName = $_companyName;
-        $this->_companyPhone = $_companyPhone;
-        $this->_description = $_description;
-        $this->_driverType = $_driverType;
-        $this->_truckType = $_truckType;
-    }
+
+
 }
