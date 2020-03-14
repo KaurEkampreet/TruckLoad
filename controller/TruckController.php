@@ -60,17 +60,7 @@ class TruckController
             //If data is valid
             if (validForm()) {
 
-                //Write data to Session
-                /*$_SESSION['Partner']->setCompanyName($companyName);
-                $_SESSION['Partner']->setCompanyPhone($companyPhone);
-                $_SESSION['Partner']->setDescription($description);
-                $_SESSION['Partner']->setDriverType($driverType);
-                $_SESSION['Partner']->setTruckType($truckType);*/
-
                 $_SESSION['Partner'] = $partner;
-
-                /*$_SESSION['driver']->setDriver($driver);
-                $_SESSION['truck']->setTruck($truck);*/
 
                 //redirect to summary page
                 $this->_f3->reroute('/summary');

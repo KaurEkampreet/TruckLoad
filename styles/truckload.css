@@ -1,3 +1,8 @@
+a {
+    color: #060124;
+    font-size: large;
+}
+
 .btn {
     margin-top: 325px;
 }
@@ -53,6 +58,7 @@
 td {
     font-weight: bolder;
     font-size: 16px;
+    text-space: 20px;
 }
 
 tr {

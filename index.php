@@ -56,7 +56,6 @@ $f3->route('GET|POST /partners', function ($f3) {
 // route for summary page
 $f3->route('GET|POST /summary', function ($f3) {
 
-
     global $db;
     global $controller;
     $controller->summary($db, $_SESSION['Partner']);

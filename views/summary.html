@@ -32,26 +32,26 @@
                 <table class="table table-bordered mt-3">
                     <tbody>
                         <tr>
-                            <td>Company Name: {{ @SESSION.company }}</td>
+                            <td>Company Name: {{ (@SESSION['Partner']->getCompanyName()) }}</td>
                         </tr>
                         <tr>
-                            <td> Phone number: {{ @SESSION.phoneNumber }}</td>
+                            <td> Phone number: {{ (@SESSION['Partner']->getCompanyPhone()) }}</td>
                         </tr>
                         <tr>
-                            <td>Driver Type: {{ @SESSION.driver }}</td>
+                            <td>Driver Type: {{ (@SESSION['Partner']->getDriverType()) }}</td>
                         </tr>
                         <tr>
-                            <td>Truck Type: {{ @SESSION.truck }}</td>
+                            <td>Truck Type: {{ (@SESSION['Partner']->getTruckType()) }}</td>
                         </tr>
                         <tr>
-                            <td>Description: {{ @SESSION.description }} </td>
+                            <td>Description: {{ (@SESSION['Partner']->getDescription()) }} </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <div>
+            <!--<div>
                 <button class="btn btn-lg btn-info" id="btn3" name="button" type="submit">Send As Email</button>
-            </div>
+            </div>-->
         </div>
     </div>
 <br>
