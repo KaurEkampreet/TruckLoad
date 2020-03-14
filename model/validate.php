@@ -31,7 +31,7 @@ function validForm()
 
     if (!validTruckType($f3->get('truck'))) {
         $isValid = false;
-        $f3->set("errors['driver']", "Please select valid Driver Type ");
+        $f3->set("errors['truck']", "Please select valid Truck Type ");
     }
     return $isValid;
 }

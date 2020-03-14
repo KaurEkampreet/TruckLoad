@@ -21,13 +21,13 @@ class TruckController
 
     function partners()
     {
-        $truck = array();
-        $driver = array();
+        /*$truck = array();
+        $driver = array();*/
 
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             //get data from form
-            $company = $_POST['company'];
+            $companyName = $_POST['company'];
             $companyPhone = $_POST['phoneNumber'];
             $description = $_POST['description'];
 
@@ -38,7 +38,7 @@ class TruckController
                 }
             }*/
 
-            $driver = $_POST['driver'];
+            $driverType = $_POST['driver'];
 
            /* //get data from truck
             if (!empty($_POST['truck'])) {
@@ -46,14 +46,14 @@ class TruckController
                     array_push($truck, $value);
                 }
             }*/
-            $truck = $_POST['truck'];
+            $truckType = $_POST['truck'];
 
             //Add data to hive
-            $this->_f3->set('company', $company);
+            $this->_f3->set('company', $companyName);
             $this->_f3->set('phoneNumber', $companyPhone);
             $this->_f3->set('description', $description);
-            $this->_f3->set('driver', $driver);
-            $this->_f3->set('truck', $truck);
+            $this->_f3->set('driver', $driverType);
+            $this->_f3->set('truck', $truckType);
 
             //$partner = new Partner($company, $companyPhone, $description, $driver, $truck);
 
@@ -61,11 +61,11 @@ class TruckController
             if (validForm()) {
 
                 //Write data to Session
-                $_SESSION['company'] = $_POST['company'];
-                $_SESSION['phoneNumber'] = $_POST['phoneNumber'];
-                $_SESSION['description'] = $_POST['description'];
-                $_SESSION['driver'] = $_POST['driver'];
-                $_SESSION['truck'] = $_POST['truck'];
+                $_SESSION['Partner']->setCompanyName($companyName);
+                $_SESSION['Partner']->setCompanyPhone($companyPhone);
+                $_SESSION['Partner']->setDescription($description);
+                $_SESSION['Partner']->setDriverType($driverType);
+                $_SESSION['Partner']->setTruckType($truckType);
 
                 /*$_SESSION['driver']->setDriver($driver);
                 $_SESSION['truck']->setTruck($truck);*/
