@@ -27,7 +27,7 @@ class TruckController
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             //get data from form
-            $companyName = $_POST['company'];
+            $companyName = $_POST['companyName'];
             $companyPhone = $_POST['phoneNumber'];
             $description = $_POST['description'];
 
@@ -49,23 +49,25 @@ class TruckController
             $truckType = $_POST['truck'];
 
             //Add data to hive
-            $this->_f3->set('company', $companyName);
+            $this->_f3->set('companyName', $companyName);
             $this->_f3->set('phoneNumber', $companyPhone);
             $this->_f3->set('description', $description);
             $this->_f3->set('driver', $driverType);
             $this->_f3->set('truck', $truckType);
 
-            //$partner = new Partner($company, $companyPhone, $description, $driver, $truck);
+            $partner = new Partner($companyName, $companyPhone, $description, $driverType, $truckType);
 
             //If data is valid
             if (validForm()) {
 
                 //Write data to Session
-                $_SESSION['Partner']->setCompanyName($companyName);
+                /*$_SESSION['Partner']->setCompanyName($companyName);
                 $_SESSION['Partner']->setCompanyPhone($companyPhone);
                 $_SESSION['Partner']->setDescription($description);
                 $_SESSION['Partner']->setDriverType($driverType);
-                $_SESSION['Partner']->setTruckType($truckType);
+                $_SESSION['Partner']->setTruckType($truckType);*/
+
+                $_SESSION['Partner'] = $partner;
 
                 /*$_SESSION['driver']->setDriver($driver);
                 $_SESSION['truck']->setTruck($truck);*/

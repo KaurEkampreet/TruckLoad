@@ -8,9 +8,9 @@ function validForm()
     global $f3;
     $isValid = true; //flag
 
-    if (!validCompanyName($f3->get('company'))) {
+    if (!validCompanyName($f3->get('companyName'))) {
         $isValid = false;
-        $f3->set("errors['company']", "Please enter a company name");
+        $f3->set("errors['companyName']", "Please enter a company name");
 
         /*alert("Anything!");*/
     }
