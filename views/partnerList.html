@@ -24,15 +24,24 @@
         <!--<h1 class=" text-capitalize">Freights Trucking</h1>-->
     </div>
 </div>
-<hr>
-<br>
+
 <div class="container">
     <h1>TruckLoad Partners List</h1>
-
-    <ol>
+    <table id="adminTable" class="table table-bordered">
+        <thead class="table-active">
+        <tr>
+            <th>Partner ID</th>
+            <th>Company Name</th>
+            <th>Company Phone</th>
+            <th>Description</th>
+            <th>Driver Type</th>
+            <th>Truck Type</th>
+        </tr>
+        </thead>
+        <tbody>
        <repeat group="{{ @partners }}" value="{{ @partner }}">
            <li><a href="detail/{{ @partner['partnerId'] }}">
-               <table>
+
                    <tr>
                        <td>{{ @partner['partnerId'] }}</td>
                        <td>{{ @partner['companyName'] }}</td>
@@ -41,12 +50,14 @@
                        <td>{{ @partner['driverType'] }}</td>
                        <td>{{ @partner['truckType'] }}</td>
                    </tr>
-               </table>
            </a> </li>
        </repeat>
-    </ol>
+        </tbody>
+    </table>
     <a href="{{ @BASE }}">Partners</a>
 </div>
-
+<div class="text-center">
+    <a class="btn btn-lg btn-info" id="btn" name="button" type="submit" href="{{ @BASE }}">Partners</a>
+</div>
 </body>
 </html>
