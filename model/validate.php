@@ -24,7 +24,12 @@ function validForm()
         $f3->set("errors['description']", "Please tell us description of request:");
     }
 
-    if (!validType($f3->get('driver'))) {
+    if (!validDriverType($f3->get('driver'))) {
+        $isValid = false;
+        $f3->set("errors['driver']", "Please select valid Driver Type ");
+    }
+
+    if (!validTruckType($f3->get('truck'))) {
         $isValid = false;
         $f3->set("errors['driver']", "Please select valid Driver Type ");
     }
@@ -59,16 +64,41 @@ function validPhoneNumber($phoneNumber)
  */
 function validDescription($description)
 {
-    return !empty($description) /*&& ctype_alpha($description)*/;
+    return !empty($description) ;
 }
 
-function validType($driver)
+function validDriverType($drivers)
 {
-    $driverCheck = false;
+    /*$driverCheck = false;*/
     global $f3;
-
-    if (empty($driver) || in_array($driver, $f3->get('drivertype'))) {
-        $driverCheck = true;
+    if (!empty($drivers)) {
+        return true;
+    } else {
+        return false;
     }
-    return $driverCheck;
+    foreach ($drivers as $driver)
+        if (in_array($driver, $f3->get('driverType'))) {
+            return true;
+        } else {
+            return false;
+        }
+
+}
+
+function validTruckType($trucks)
+{
+    /*$driverCheck = false;*/
+    global $f3;
+    if (!empty($trucks)) {
+        return true;
+    } else {
+        return false;
+    }
+    foreach ($trucks as $truck)
+        if (in_array($truck, $f3->get('truckType'))) {
+            return true;
+        } else {
+            return false;
+        }
+
 }

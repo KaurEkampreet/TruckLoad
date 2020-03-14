@@ -17,25 +17,6 @@ class TruckLoadDatabase
         }
     }
 
-    function getOwners()
-    {
-        //1. Define the query
-        $sql = "SELECT * FROM owner
-                ORDER BY lastName, firstName ASC";
-
-        //2. Prepare the statement
-        $statement = $this->_dbh->prepare($sql);
-
-        //3. Bind the parameter
-
-        //4. Execute the statement
-        $statement->execute();
-
-        //5. Get the result
-        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-        return $result;
-    }
-
     function getPartners()
     {
         //1. Define the query
@@ -77,7 +58,7 @@ class TruckLoadDatabase
 
 
 
-    function insertPrtnerRequest($partner)
+    function insertPartner($partner)
     {
         //1. Define the query
         $sql = "INSERT INTO partner(companyName, companyPhone, description, driverType, truckType)
