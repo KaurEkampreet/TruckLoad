@@ -18,42 +18,42 @@
           href="./styles/truckload.css">
 </head>
 <body>
-    <div class="container-fluid mt-4 mb-5">
-        <div class="page-header">
-            <h1 class="text-center">Drive your business forward</h1>
-            <a href="partnerList.html">Admin</a>
+<div class="container-fluid mt-4 mb-5">
+    <div class="page-header">
+        <h1 class="text-center">Drive your business forward</h1>
+
+    </div>
+</div>
+<hr>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-sm-12">
+            <table class="table table-bordered mt-3">
+                <tbody>
+                    <tr>
+                        <td>Company Name: {{ (@SESSION['Partner']->getCompanyName()) }}</td>
+                    </tr>
+                    <tr>
+                        <td> Phone number: {{ (@SESSION['Partner']->getCompanyPhone()) }}</td>
+                    </tr>
+                    <tr>
+                        <td>Driver Type: {{ (@SESSION['Partner']->getDriverType()) }}</td>
+                    </tr>
+                    <tr>
+                        <td>Truck Type: {{ (@SESSION['Partner']->getTruckType()) }}</td>
+                    </tr>
+                    <tr>
+                        <td>Description: {{ (@SESSION['Partner']->getDescription()) }} </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <a class="btn btn-lg btn-info" id="btn3" name="button" type="submit" href="partnerList.html">Admin</a>
         </div>
     </div>
-    <hr>
-    <br>
-    <div class="container border rounded mt-3 clearfix">
-        <div class="row">
-            <div class="col-lg-6 col-sm-12">
-                <table class="table table-bordered mt-3">
-                    <tbody>
-                        <tr>
-                            <td>Company Name: {{ (@SESSION['Partner']->getCompanyName()) }}</td>
-                        </tr>
-                        <tr>
-                            <td> Phone number: {{ (@SESSION['Partner']->getCompanyPhone()) }}</td>
-                        </tr>
-                        <tr>
-                            <td>Driver Type: {{ (@SESSION['Partner']->getDriverType()) }}</td>
-                        </tr>
-                        <tr>
-                            <td>Truck Type: {{ (@SESSION['Partner']->getTruckType()) }}</td>
-                        </tr>
-                        <tr>
-                            <td>Description: {{ (@SESSION['Partner']->getDescription()) }} </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <!--<div>
-                <button class="btn btn-lg btn-info" id="btn3" name="button" type="submit">Send As Email</button>
-            </div>-->
-        </div>
-    </div>
+</div>
 <br>
 <hr class="m-5">
 <div class="container-fluid" id="footer">

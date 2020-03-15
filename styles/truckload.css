@@ -4,7 +4,7 @@ a {
 }
 
 .btn {
-    margin-top: 325px;
+    margin-top: 350px;
 }
 
 #btn2 {
@@ -15,7 +15,15 @@ a {
     margin-top: 555px;
 }
 
-.col-md-8 {
+#btn4 {
+    margin-top: 10px;
+}
+
+#btn5 {
+    margin-top: 350px;
+}
+
+.col-md-12 {
     background-color: #8C92AC;
     background-image: url("../images/truckings.jpg");
     background-repeat: no-repeat;

@@ -55,9 +55,6 @@ class TruckLoadDatabase
         $result = $statement->fetch(PDO::FETCH_ASSOC);
         return $result;
     }
-
-
-
     function insertPartner($partner)
     {
         //1. Define the query
