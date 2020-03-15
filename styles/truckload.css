@@ -16,22 +16,22 @@ a {
 }
 
 .col-md-8 {
-    background-color: #3f9fb5;
+    background-color: #8C92AC;
     background-image: url("../images/truckings.jpg");
     background-repeat: no-repeat;
     text-align: center;
-    height: 600px;
-    width: 1308px;
+    max-width: 100%;
+    height: auto;
 }
 
 .container {
-    background-color: #3f9fb5;
+    background-color: #8C92AC;
     background-image: url("../images/truckings.jpg");
     background-position-y: center;
     background-repeat: no-repeat;
     color: black;
-    height: 600px;
-    width: 1308px;
+    max-width: 100%;
+    height: auto;
 }
 
 .container-fluid {
@@ -39,6 +39,8 @@ a {
     color: white;
     background-margin: 100px;
     text-align: center;
+    max-width: 100%;
+    height: auto;
 }
 
 .display-3 {
@@ -54,6 +56,8 @@ a {
 }
 #heading {
     background-image: url("../images/trucking.jpg");
+    max-width: 100%;
+    height: auto;
 }
 
 td {
