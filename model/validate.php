@@ -15,10 +15,11 @@ function validForm()
         /*alert("Anything!");*/
     }
 
-    if (!validPhoneNumber($f3->get('phoneNumber'))) {
+    if (!validCompanyPhone($f3->get('companyPhone'))) {
         $isValid = false;
-        $f3->set("errors['phoneNumber']", "Please enter valid 10 digit phone number");
+        $f3->set("errors['companyPhone']", "Please enter valid 10 digit phone number");
     }
+
     if (!validDescription($f3->get('description'))) {
         $isValid = false;
         $f3->set("errors['description']", "Please tell us description of request:");
@@ -46,18 +47,19 @@ function validCompanyName($company)
 }
 //validate phone number
 /**
- * @param $phoneNumber
+ * @param $companyPhone
  * @return bool
  */
-function validPhoneNumber($phoneNumber)
+function validCompanyPhone($companyPhone)
 {
     $phoneResult = false;
-    if (strlen($phoneNumber) == 10 && !empty($phoneNumber) && ctype_digit($phoneNumber)) {
+    if (strlen($companyPhone) == 10 && !empty($companyPhone) && ctype_digit($companyPhone)) {
         $phoneResult = true;
     }
     return $phoneResult;
 
 }
+
 /**
  * @param $description
  * @return bool
