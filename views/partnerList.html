@@ -21,19 +21,14 @@
 <div class="container-fluid mt-4 mb-5">
     <div class="page-header">
         <h1 class="text-center">Drive your business forward</h1>
-<!--        <div class="text-center">-->
-<!--            <a class="btn btn-lg btn-info" id="btn" name="button" type="submit" href="{{ @BASE }}">Partners</a>-->
-<!--        </div>-->
-<!--        <a id="btn" name="button" type="submit" href="{{ @BASE }}">Partners</a>-->
         <!--<h1 class=" text-capitalize">Freights Trucking</h1>-->
     </div>
 </div>
 
-<!--<div class="container">-->
-
+<div class="container">
     <h1>TruckLoad Partners List</h1>
-<table id="adminTable" class="table table-bordered">
-   <thead>
+    <table id="adminTable" class="table table-bordered">
+        <thead class="table-active">
         <tr>
             <th>Partner ID</th>
             <th>Company Name</th>
@@ -42,10 +37,10 @@
             <th>Driver Type</th>
             <th>Truck Type</th>
         </tr>
-   </thead>
-    <tbody>
+        </thead>
+        <tbody>
        <repeat group="{{ @partners }}" value="{{ @partner }}">
-        <a href="detail/{{ @partner['partnerId'] }}">
+           <li><a href="detail/{{ @partner['partnerId'] }}">
 
                    <tr>
                        <td>{{ @partner['partnerId'] }}</td>
@@ -55,37 +50,14 @@
                        <td>{{ @partner['driverType'] }}</td>
                        <td>{{ @partner['truckType'] }}</td>
                    </tr>
-        </a>
+           </a> </li>
        </repeat>
-    </tbody>
-</table>
-<!--    <a href="{{ @BASE }}">Partners</a>-->
-<!--</div>-->
-
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
-
-<script>
-    //$('#student-table').DataTable();
-    $('#adminTable').DataTable({
-        order:[0,'desc'],
-        responsive: {
-            details: {
-                display: $.fn.dataTable.Responsive.display.modal({
-                    header: function (row) {
-                        var data = row.data();
-                        return 'Details for ' + data[0] + ' ' + data[1];
-                    }
-                }),
-                renderer: $.fn.dataTable.Responsive.renderer.tableAll({
-                    tableClass: 'table'
-                })
-            }
-        }
-    });
-</script>
+        </tbody>
+    </table>
+    <a href="{{ @BASE }}">Partners</a>
+</div>
+<div class="text-center">
+    <a class="btn btn-lg btn-info" id="btn" name="button" type="submit" href="{{ @BASE }}">Partners</a>
+</div>
 </body>
 </html>
