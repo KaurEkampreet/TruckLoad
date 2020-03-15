@@ -28,7 +28,7 @@ class TruckController
 
             //get data from form
             $companyName = $_POST['companyName'];
-            $companyPhone = $_POST['companyPhone'];
+            $companyPhone = $_POST['phoneNumber'];
             $description = $_POST['description'];
 
             /*//get data from driver
@@ -50,7 +50,7 @@ class TruckController
 
             //Add data to hive
             $this->_f3->set('companyName', $companyName);
-            $this->_f3->set('companyPhone', $companyPhone);
+            $this->_f3->set('phoneNumber', $companyPhone);
             $this->_f3->set('description', $description);
             $this->_f3->set('driver', $driverType);
             $this->_f3->set('truck', $truckType);
