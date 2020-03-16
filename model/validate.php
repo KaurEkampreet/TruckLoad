@@ -67,6 +67,10 @@ function validDescription($description)
     return !empty($description) ;
 }
 
+/**
+ * @param $drivers
+ * @return bool
+ */
 function validDriverType($drivers)
 {
     /*$driverCheck = false;*/
@@ -85,6 +89,10 @@ function validDriverType($drivers)
 
 }
 
+/**
+ * @param $trucks
+ * @return bool
+ */
 function validTruckType($trucks)
 {
     /*$driverCheck = false;*/
