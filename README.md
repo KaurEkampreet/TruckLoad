@@ -19,3 +19,4 @@ TruckLoad have 3 different classes which cover all fat-free and MVC. Driver and 
 
 Yes, TruckLoad app contains full Docblocks for all php files and follow PEAR standards.
 
+TruckLoad has server side validation through php.
