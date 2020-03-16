@@ -40,7 +40,7 @@ $f3->route('GET /', function ($f3) {
 
 //define a route that displays partner detail
 $f3->route('GET /detail/@partnerId', function ($f3, $params) {
-    $GLOBALS['controller']->detail($params['partnerId']);
+    $GLOBALS['controller']->detail($params['partnerId'], $params['driverId'], $params['truckId']);
 });
 
 //define a route that displays the admin page
@@ -50,7 +50,9 @@ $f3->route('GET /partnerList.html', function ($f3) {
 
 //Define partner's route
 $f3->route('GET|POST /partners', function ($f3) {
-        $GLOBALS['controller']->partners();
+    $GLOBALS['controller']->partners();
+    $GLOBALS['controller']->drivers();
+    $GLOBALS['controller']->trucks();
 });
 
 // route for summary page

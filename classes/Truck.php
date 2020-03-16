@@ -2,22 +2,18 @@
 
 class Truck extends Partner
 {
-
-    private $_truckId;
     private $_truckType;
 
     /**
      * Truck constructor.
-     * @param $_truckId
      * @param $_truckType
      * @param $companyName
      * @param $companyPhone
      * @param $description
      */
-    public function __construct($_truckId, $_truckType, $companyName, $companyPhone, $description)
+    public function __construct($_truckType, $companyName, $companyPhone, $description)
     {
         parent::__construct($companyName, $companyPhone, $description);
-        $this->_truckId = $_truckId;
         $this->_truckType = $_truckType;
     }
 
@@ -67,22 +63,6 @@ class Truck extends Partner
     public function setDescription($description)
     {
         $this->_description = $description;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getTruckId()
-    {
-        return $this->_truckId;
-    }
-
-    /**
-     * @param mixed $truckId
-     */
-    public function setTruckId($truckId)
-    {
-        $this->_truckId = $truckId;
     }
 
     /**

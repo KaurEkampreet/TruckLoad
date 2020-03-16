@@ -6,23 +6,25 @@ class Partner
     protected $_companyName;
     protected $_companyPhone;
     protected $_description;
-    /*private $_driverType;
-    protected $_truckType;*/
+    protected $_driverType;
+    protected $_truckType;
+
 
     /**
      * Partner constructor.
      * @param $companyName
      * @param $companyPhone
      * @param $description
-     *
+     * @param $driverType
+     * @param $truckType
      */
-    public function __construct($companyName, $companyPhone, $description)
+    public function __construct($companyName, $companyPhone, $description, $driverType, $truckType)
     {
         $this->_companyName = $companyName;
         $this->_companyPhone = $companyPhone;
         $this->_description = $description;
-        /*$this->_driverType = $driverType;
-        $this->_truckType = $truckType;*/
+        $this->_driverType = $driverType;
+        $this->_truckType = $truckType;
     }
     /**
      * @return mixed
@@ -75,34 +77,35 @@ class Partner
     /**
      * @return mixed
      */
-   /* public function getDriverType()
+    public function getDriverType()
     {
         return $this->_driverType;
-    }*/
+    }
 
     /**
      * @param mixed $driverType
      */
-    /*public function setDriverType($driverType)
+    public function setDriverType($driverType)
     {
         $this->_driverType = $driverType;
-    }*/
+    }
 
     /**
      * @return mixed
      */
-   /* public function getTruckType()
+    public function getTruckType()
     {
         return $this->_truckType;
-    }*/
+    }
 
     /**
      * @param mixed $truckType
      */
-   /* public function setTruckType($truckType)
+    public function setTruckType($truckType)
     {
         $this->_truckType = $truckType;
-    }*/
+    }
+
 
 
 

@@ -39,8 +39,50 @@ class TruckLoadDatabase
     {
         //1. Define the query
         $sql = "SELECT * 
-                FROM partner, owner
+                FROM partner, driver
                 WHERE partner.partnerId = owner.partnerId
+                AND partnerId = :partnerId";
+
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        //3. Bind the parameter
+        $statement->bindParam(':partnerId', $partnerId);
+        //4. Execute the statement
+        $statement->execute();
+
+        //5. Get the result
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    function getDriver($partnerId)
+    {
+        //1. Define the query
+        $sql = "SELECT * 
+                FROM driver, partner
+                WHERE  driver.partnerId = partner.partnerId 
+                AND partnerId = :partnerId";
+
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        //3. Bind the parameter
+        $statement->bindParam(':partnerId', $partnerId);
+        //4. Execute the statement
+        $statement->execute();
+
+        //5. Get the result
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    function getTruck($partnerId)
+    {
+        //1. Define the query
+        $sql = "SELECT * 
+                FROM truck, partner
+                WHERE  truck.partnerId = partner.partnerId 
                 AND partnerId = :partnerId";
 
         //2. Prepare the statement
@@ -79,5 +121,41 @@ class TruckLoadDatabase
         $id = $this->_dbh->lastInsertId();
     }
 
+    function insertDriver($partner)
+    {
+        //1. Define the query
+        $sql = "INSERT INTO driver(driverType)
+                VALUES (:driverType)";
 
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        //3. Bind the parameter
+        $statement->bindParam(':driverType', $partner->getDriverType());
+
+        //4. Execute the statement
+        $statement->execute();
+
+        //5. Get the result
+        $id = $this->_dbh->lastInsertId();
+    }
+
+    function insertTruck($partner)
+    {
+        //1. Define the query
+        $sql = "INSERT INTO truck(truckType)
+                VALUES (:truckType)";
+
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        //3. Bind the parameter
+        $statement->bindParam(':truckType', $partner->getTruckType());
+
+        //4. Execute the statement
+        $statement->execute();
+
+        //5. Get the result
+        $id = $this->_dbh->lastInsertId();
+    }
 }
