@@ -121,5 +121,41 @@ class TruckLoadDatabase
         $id = $this->_dbh->lastInsertId();
     }
 
+    function insertDriver($partner)
+    {
+        //1. Define the query
+        $sql = "INSERT INTO driver(driverType)
+                VALUES (:driverType)";
 
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        //3. Bind the parameter
+        $statement->bindParam(':driverType', $partner->getDriverType());
+
+        //4. Execute the statement
+        $statement->execute();
+
+        //5. Get the result
+        $id = $this->_dbh->lastInsertId();
+    }
+
+    function insertTruck($partner)
+    {
+        //1. Define the query
+        $sql = "INSERT INTO truck(truckType)
+                VALUES (:truckType)";
+
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        //3. Bind the parameter
+        $statement->bindParam(':truckType', $partner->getTruckType());
+
+        //4. Execute the statement
+        $statement->execute();
+
+        //5. Get the result
+        $id = $this->_dbh->lastInsertId();
+    }
 }

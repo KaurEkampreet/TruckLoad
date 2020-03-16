@@ -82,20 +82,6 @@ class Driver extends Partner
         $this->_description = $description;
     }
 
-    /**
-     * @return mixed
-     */
-    /*public function getTruckType()
-    {
-        return $this->_truckType;
-    }*/
 
-    /**
-     * @param mixed $truckType
-     */
-   /* public function setTruckType($truckType)
-    {
-        $this->_truckType = $truckType;
-    }*/
 
 }

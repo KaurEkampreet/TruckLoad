@@ -12,7 +12,6 @@ function validForm()
         $isValid = false;
         $f3->set("errors['companyName']", "Please enter a company name");
 
-        /*alert("Anything!");*/
     }
 
     if (!validPhoneNumber($f3->get('phoneNumber'))) {
@@ -28,6 +27,30 @@ function validForm()
         $isValid = false;
         $f3->set("errors['driver']", "Please select valid Driver Type ");
     }
+
+    if (!validTruckType($f3->get('truck'))) {
+        $isValid = false;
+        $f3->set("errors['truck']", "Please select valid Truck Type ");
+    }
+    return $isValid;
+}
+
+function validDriver()
+{
+    global $f3;
+    $isValid = true; //flag
+
+    if (!validDriverType($f3->get('driver'))) {
+        $isValid = false;
+        $f3->set("errors['driver']", "Please select valid Driver Type ");
+    }
+    return $isValid;
+}
+
+function validTruck()
+{
+    global $f3;
+    $isValid = true; //flag
 
     if (!validTruckType($f3->get('truck'))) {
         $isValid = false;

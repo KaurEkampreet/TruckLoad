@@ -21,8 +21,6 @@ class TruckController
 
     function partners()
     {
-        /*$truck = array();
-        $driver = array();*/
 
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -31,21 +29,7 @@ class TruckController
             $companyPhone = $_POST['phoneNumber'];
             $description = $_POST['description'];
 
-            /*//get data from driver
-            if (!empty($_POST['driver'])) {
-                foreach ($_POST['driver'] as $value) {
-                    array_push($driver, $value);
-                }
-            }*/
-
             $driverType = $_POST['driver'];
-
-           /* //get data from truck
-            if (!empty($_POST['truck'])) {
-                foreach ($_POST['truck'] as $value) {
-                    array_push($truck, $value);
-                }
-            }*/
             $truckType = $_POST['truck'];
 
             //Add data to hive
@@ -72,12 +56,74 @@ class TruckController
 
     }
 
-    public function detail($partnerId)
+    function drivers()
+    {
+
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            //get data from form
+            $driverType = $_POST['driver'];
+
+            //Add data to hive
+            $this->_f3->set('driver', $driverType);
+
+            $driver = new Driver($driverType);
+
+            //If data is valid
+            if (validForm()) {
+
+                $_SESSION['Driver'] = $driver;
+
+                //redirect to summary page
+                $this->_f3->reroute('/summary');
+            }
+
+        }
+        $view = new Template();
+        echo $view->render('views/partners.html');
+    }
+
+    function trucks()
+    {
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            //get data from form
+            $truckType = $_POST['truck'];
+
+            //Add data to hive
+            $this->_f3->set('truck', $truckType);;
+
+            $truck = new Driver($truckType);
+
+            //If data is valid
+            if (validForm()) {
+
+                $_SESSION['Driver'] = $truck;
+
+                //redirect to summary page
+                $this->_f3->reroute('/summary');
+            }
+
+        }
+        $view = new Template();
+        echo $view->render('views/partners.html');
+    }
+
+    public function detail($partnerId, $truckId, $driverId)
     {
         $partner = $GLOBALS['db']->getPartner($partnerId);
+        $driver = $GLOBALS['db']->getDriver($driverId);
+        $truck = $GLOBALS['db']->getTruck($truckId);
 
         //Add the partner object to the hive, and display the view
         $this->_f3->set('partner', $partner);
+
+        //Add the driver object to the hive, and display the view
+        $this->_f3->set('driver', $driver);
+
+        //Add the truck object to the hive, and display the view
+        $this->_f3->set('truck', $truck);
+
         $template = new Template();
         echo $template->render('views/partner-detail.html');
     }
@@ -85,6 +131,8 @@ class TruckController
     function summary($db, $partner)
     {
         $db->insertPartner($partner);
+        /*$db->insertDriver($driver);
+        $db->insertTruck($truck);*/
 
         //Display summary
         $view = new Template();
