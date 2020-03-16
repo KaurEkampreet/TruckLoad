@@ -2,39 +2,21 @@
 
 class Driver extends Partner
 {
-    private $_driverId;
     private $_driverType;
 
     /**
      * Driver constructor.
-     * @param $driverId
      * @param $driverType
      * @param $companyName
      * @param $companyPhone
      * @param $description
      */
-    public function __construct($driverId, $driverType, $companyName, $companyPhone, $description)
+    public function __construct($driverType, $companyName, $companyPhone, $description)
     {
         parent::__construct($companyName, $companyPhone, $description);
-        $this->_driverId = $driverId;
         $this->_driverType = $driverType;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getDriverId()
-    {
-        return $this->_driverId;
-    }
-
-    /**
-     * @param mixed $driverId
-     */
-    public function setDriverId($driverId)
-    {
-        $this->_driverId = $driverId;
-    }
 
     /**
      * @return mixed
