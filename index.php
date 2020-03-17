@@ -51,8 +51,6 @@ $f3->route('GET /partnerList.html', function ($f3) {
 //Define partner's route
 $f3->route('GET|POST /partners', function ($f3) {
     $GLOBALS['controller']->partners();
-    $GLOBALS['controller']->drivers();
-    $GLOBALS['controller']->trucks();
 });
 
 // route for summary page

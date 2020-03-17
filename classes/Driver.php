@@ -2,7 +2,7 @@
 
 class Driver extends Partner
 {
-    private $_driverType;
+    protected $_driverType;
 
     /**
      * Driver constructor.

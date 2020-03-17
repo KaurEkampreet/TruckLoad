@@ -56,59 +56,6 @@ class TruckController
 
     }
 
-    function drivers()
-    {
-
-        if($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-            //get data from form
-            $driverType = $_POST['driver'];
-
-            //Add data to hive
-            $this->_f3->set('driver', $driverType);
-
-            $driver = new Driver($driverType);
-
-            //If data is valid
-            if (validForm()) {
-
-                $_SESSION['Driver'] = $driver;
-
-                //redirect to summary page
-                $this->_f3->reroute('/summary');
-            }
-
-        }
-        $view = new Template();
-        echo $view->render('views/partners.html');
-    }
-
-    function trucks()
-    {
-        if($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-            //get data from form
-            $truckType = $_POST['truck'];
-
-            //Add data to hive
-            $this->_f3->set('truck', $truckType);;
-
-            $truck = new Driver($truckType);
-
-            //If data is valid
-            if (validForm()) {
-
-                $_SESSION['Driver'] = $truck;
-
-                //redirect to summary page
-                $this->_f3->reroute('/summary');
-            }
-
-        }
-        $view = new Template();
-        echo $view->render('views/partners.html');
-    }
-
     public function detail($partnerId, $truckId, $driverId)
     {
         $partner = $GLOBALS['db']->getPartner($partnerId);

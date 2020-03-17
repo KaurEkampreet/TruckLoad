@@ -2,7 +2,7 @@
 
 class Truck extends Partner
 {
-    private $_truckType;
+    protected $_truckType;
 
     /**
      * Truck constructor.
